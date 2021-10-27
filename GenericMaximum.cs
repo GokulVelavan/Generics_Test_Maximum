@@ -7,46 +7,28 @@ using System.Threading.Tasks;
 namespace Generics_Test_Maximum
 {
     public class GenericMaximum<T> where T:IComparable{
-
-        public T firstValue, secondValue, thirdValue;
-
-        public GenericMaximum(T firstValue,T secondValue,T thirdValue) //initializing values via constructor
+        public T[] value;
+        public GenericMaximum(T[] value)
         {
-            this.firstValue = firstValue;
-            this.secondValue = secondValue;
-            this.thirdValue = thirdValue;
+            this.value = value; //constructor 
         }
 
-        public static T MaxValue(T firstValue,T secondValue,T thirdValue) //generic method
+        public T[] Sort(T[] values)
         {
-            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
-               firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
-               firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
-            {
-                return firstValue;
-            }
-
-            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0 ||
-                secondValue.CompareTo(firstValue) >= 0 && secondValue.CompareTo(thirdValue) > 0 ||
-                secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) >= 0)
-            {
-                return secondValue;
-            }
-            if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0 ||
-               thirdValue.CompareTo(firstValue) >= 0 && thirdValue.CompareTo(secondValue) > 0 ||
-               thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) >= 0)
-            {
-                return thirdValue;
-            }
-            return default;
+            Array.Sort(values);// sorting values
+            return values;
         }
-        
-
-        public  T MaxMethod()
+        public T MaxValue(params T[] values)
         {
-            T max = GenericMaximum<T>.MaxValue(this.firstValue, this.secondValue, this.thirdValue);//calling the method
-            return max;
+            var Sorted_Values = Sort(values);
+            return Sorted_Values[Sorted_Values.Length-1]; //during sorting the max value is passed to end of the array
+                                                         //so passing the final element of the array
         }
-
+       
+        public void PrintingMaxValue()
+        {
+            var maximum = MaxValue(this.value);
+            Console.WriteLine("The max of the values is : " + maximum);
+        }
     }
 }

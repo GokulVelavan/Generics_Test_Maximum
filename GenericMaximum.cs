@@ -10,14 +10,14 @@ namespace Generics_Test_Maximum
 
         public T firstValue, secondValue, thirdValue;
 
-        public GenericMaximum(T firstValue,T secondValue,T thirdValue)
+        public GenericMaximum(T firstValue,T secondValue,T thirdValue) //initializing values via constructor
         {
             this.firstValue = firstValue;
             this.secondValue = secondValue;
             this.thirdValue = thirdValue;
         }
 
-        public static T MaxValue(T firstValue,T secondValue,T thirdValue)
+        public static T MaxValue(T firstValue,T secondValue,T thirdValue) //generic method
         {
             if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
                firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
@@ -44,7 +44,7 @@ namespace Generics_Test_Maximum
 
         public  T MaxMethod()
         {
-            T max = GenericMaximum<T>.MaxValue(this.firstValue, this.secondValue, this.thirdValue);
+            T max = GenericMaximum<T>.MaxValue(this.firstValue, this.secondValue, this.thirdValue);//calling the method
             return max;
         }
 

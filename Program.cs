@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace Generics_Test_Maximum
 {
-    class Program
-    {
-        public static int Maximum_Number(int firstValue, int secondValue, int thirdValue) //method to find maximum
-        {
-            //using inbuild method to find the maxium value
-            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
+    class Program { 
+   public static int Maximum_Number(int firstValue, int secondValue, int thirdValue)
+        {            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
                 firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
                 firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
             {
@@ -33,12 +30,11 @@ namespace Generics_Test_Maximum
             return firstValue;
         }
 
-        public static double MaximumFloatNumber(double firstValue, double secondValue, double thirdValue) //method to find maximum
+        public static double MaximumFloatNumber(double firstValue, double secondValue, double thirdValue)
         {
-            //using inbuild method to find the maxium value
             if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
-                firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
-                firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
+       firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
+       firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
             {
                 return firstValue;
             }

@@ -10,15 +10,9 @@ namespace Generics_Test_Maximum
  
         static void Main(string[] args)
         {
-
-           int value1= new GenericMaximum<int>(3,2,1).MaxMethod();
-            double value2 = new GenericMaximum<double>(3.1, 2.5, 1.9).MaxMethod();
-           string value3 = new GenericMaximum<string>("Apple","Peach","Banana").MaxMethod();
-
-
-            Console.WriteLine(value1);
-            Console.WriteLine(value2);
-            Console.WriteLine(value3);
+            int[] arr = { 1, 2, 3, 4, 9, 5, 6 };
+            GenericMaximum<int> generic = new GenericMaximum<int>(arr);
+            generic.PrintingMaxValue();
             Console.ReadLine();
         }
     }

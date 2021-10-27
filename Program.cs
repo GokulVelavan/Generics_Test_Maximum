@@ -8,8 +8,9 @@ namespace Generics_Test_Maximum
 {
     class Program
     {
-        public static int Maximum_Number(int firstValue, int secondValue, int thirdValue)
+        public static int Maximum_Number(int firstValue, int secondValue, int thirdValue) //method to find maximum
         {
+            //using inbuild method to find the maxium value
             if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
                 firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
                 firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
